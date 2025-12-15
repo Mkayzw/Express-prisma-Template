@@ -22,7 +22,7 @@ A production-ready Express.js API with Prisma ORM, TypeScript, and authenticatio
 ![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-E6522C?style=flat-square&logo=prometheus&logoColor=white)
 ![BullMQ](https://img.shields.io/badge/BullMQ-Jobs-FF6B6B?style=flat-square)
 
-## 🚀 Features
+##  Features
 
 - ✅ **TypeScript** - Full type safety across the application
 - ✅ **Modular Architecture** - Clean separation of concerns with feature modules
@@ -39,7 +39,7 @@ A production-ready Express.js API with Prisma ORM, TypeScript, and authenticatio
 - ✅ **Docker** - Docker Compose with PostgreSQL, Redis, NGINX
 - ✅ **Documentation** - VitePress docs site
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 express-prisma-boilerplate/
@@ -81,7 +81,7 @@ express-prisma-boilerplate/
 └── README.md
 ```
 
-## 🛠️ Installation
+##  Installation
 
 ### Prerequisites
 
@@ -145,7 +145,7 @@ express-prisma-boilerplate/
    docker-compose up
    ```
 
-## 📚 API Documentation
+## API Documentation
 
 ### Authentication Endpoints
 
@@ -261,7 +261,7 @@ DELETE /api/v1/users/:id
 Authorization: Bearer <admin-token>
 ```
 
-## 🧪 Testing
+## Testing
 
 Run the test suite:
 
@@ -276,7 +276,7 @@ npm run test:watch
 npm run test:coverage
 ```
 
-## 📝 Scripts
+##  Scripts
 
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build the application
@@ -289,7 +289,7 @@ npm run test:coverage
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint issues
 
-## 🔧 Configuration
+##  Configuration
 
 The application can be configured through environment variables:
 
@@ -304,7 +304,7 @@ The application can be configured through environment variables:
 | `RATE_LIMIT_WINDOW_MS` | Rate limit window in milliseconds | `900000` |
 | `RATE_LIMIT_MAX_REQUESTS` | Max requests per window | `100` |
 
-## 🚀 Deployment
+##  Deployment
 
 ### Docker Deployment
 
@@ -337,7 +337,7 @@ The application can be configured through environment variables:
    npm start
    ```
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please check out our [Contributing Guide](CONTRIBUTING.md) for details on how to get started.
 
@@ -353,7 +353,7 @@ Please also note that we have a [Code of Conduct](CODE_OF_CONDUCT.md) that we ex
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - [Express.js](https://expressjs.com/) - Web framework for Node.js
 - [Prisma](https://www.prisma.io/) - Next-generation ORM
