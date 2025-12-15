@@ -2,6 +2,16 @@
 
 Express + Prisma Boilerplate is a production-ready template for building scalable REST APIs with modern Node.js technologies.
 
+## What You'll Learn
+
+This documentation covers everything you need to build and deploy production APIs:
+
+- **Getting Started** - Installation, configuration, and project structure
+- **Core Features** - Authentication, database, caching, and background jobs
+- **Production** - Deployment, monitoring, and testing
+
+## Tech Stack
+
 ### Backend
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-5.x-000000?style=flat-square&logo=express&logoColor=white)
@@ -49,7 +59,34 @@ Express + Prisma Boilerplate is a production-ready template for building scalabl
                    └─────────────┘
 ```
 
-## Tech Stack
+## Documentation Map
+
+### For New Users
+
+Start here to get up and running:
+
+1. [Quick Start](/guide/quick-start) - Get running in 5 minutes
+2. [Project Structure](/guide/project-structure) - Understand the codebase
+3. [Configuration](/guide/configuration) - Configure your environment
+
+### For Developers
+
+Learn the core features:
+
+- [Authentication](/guide/authentication) - JWT tokens, sessions, roles
+- [Database](/guide/database) - Prisma models, CRUD, migrations
+- [Caching](/guide/caching) - Redis caching strategies
+- [Background Jobs](/guide/jobs) - Queue workers and scheduling
+
+### For Production
+
+Deploy with confidence:
+
+- [Deployment](/guide/deployment) - Docker, NGINX, scaling
+- [Monitoring](/guide/monitoring) - Metrics, logging, alerting
+- [Testing](/guide/testing) - Unit tests, integration, CI/CD
+
+## Quick Links
 
 | Component | Technology |
 |-----------|------------|
@@ -62,3 +99,8 @@ Express + Prisma Boilerplate is a production-ready template for building scalabl
 | Queue | BullMQ |
 | Validation | Zod |
 | Metrics | prom-client |
+
+## Getting Help
+
+- [GitHub Issues](https://github.com/Mkayzw/Express-prisma-Template/issues) - Bug reports and feature requests
+- [GitHub Discussions](https://github.com/Mkayzw/Express-prisma-Template/discussions) - Questions and community help
