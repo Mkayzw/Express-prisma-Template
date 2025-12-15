@@ -339,6 +339,10 @@ The application can be configured through environment variables:
 
 ## 🤝 Contributing
 
+Contributions are welcome! Please check out our [Contributing Guide](CONTRIBUTING.md) for details on how to get started.
+
+Please also note that we have a [Code of Conduct](CODE_OF_CONDUCT.md) that we expect all contributors to adhere to.
+
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)

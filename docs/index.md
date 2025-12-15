@@ -46,8 +46,6 @@ features:
     details: Docker Compose setup with PostgreSQL, Redis, and NGINX
 ---
 
-<div style="text-align: center; margin-top: 2rem;">
-
 ### Backend
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-5.x-000000?style=flat-square&logo=express&logoColor=white)
@@ -64,5 +62,3 @@ features:
 ### Monitoring
 ![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-E6522C?style=flat-square&logo=prometheus&logoColor=white)
 ![BullMQ](https://img.shields.io/badge/BullMQ-Jobs-FF6B6B?style=flat-square)
-
-</div>
