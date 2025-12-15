@@ -11,7 +11,7 @@ import {
   verifyToken,
 } from './auth.controller';
 
-const router = Router();
+const router: Router = Router();
 
 // Public routes
 router.post('/login', login);

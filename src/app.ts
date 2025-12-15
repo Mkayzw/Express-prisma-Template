@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
-import { json } from 'body-parser';
 import config from './config';
 import userRoutes from './modules/user/user.routes';
 import authRoutes from './modules/auth/auth.routes';
@@ -14,7 +13,7 @@ import logger from './utils/logger';
 import { prisma } from './db/client';
 import RedisClient from './lib/redis';
 
-const app = express();
+const app: ReturnType<typeof express> = express();
 
 // Rate limiting
 const limiter = rateLimit({
@@ -32,7 +31,7 @@ app.use(cors({
   origin: config.corsOrigin,
   credentials: true,
 }));
-app.use(json());
+app.use(express.json());
 app.use(limiter);
 app.use(tracingMiddleware);
 app.use(metricsMiddleware);

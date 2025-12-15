@@ -11,7 +11,7 @@ import {
   updateProfile,
 } from './user.controller';
 
-const router = Router();
+const router: Router = Router();
 
 // Public routes (none for now)
 

@@ -1,8 +1,8 @@
 export interface User {
   id: string;
   email: string;
-  firstName?: string;
-  lastName?: string;
+  firstName?: string | null;
+  lastName?: string | null;
   role: string;
   createdAt: Date;
   updatedAt: Date;
@@ -19,7 +19,7 @@ export interface UpdateUserInput {
   email?: string;
   firstName?: string;
   lastName?: string;
-  role?: string;
+  role?: 'USER' | 'ADMIN';
 }
 
 export interface UserQueryParams {

@@ -2,21 +2,42 @@
 
 A production-ready Express.js API with Prisma ORM, TypeScript, and authentication. This boilerplate follows best practices for building scalable and maintainable Node.js applications.
 
+[![Documentation](https://img.shields.io/badge/docs-VitePress-646CFF?style=flat-square&logo=vitepress)](https://mkayzw.github.io/Express-prisma-Template/)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+
+### Backend
+![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-5.x-000000?style=flat-square&logo=express&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-6.x-2D3748?style=flat-square&logo=prisma&logoColor=white)
+![Zod](https://img.shields.io/badge/Zod-Validation-3E67B1?style=flat-square&logo=zod&logoColor=white)
+
+### Infrastructure
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-7-DC382D?style=flat-square&logo=redis&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
+![NGINX](https://img.shields.io/badge/NGINX-Proxy-009639?style=flat-square&logo=nginx&logoColor=white)
+
+### Monitoring
+![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+![BullMQ](https://img.shields.io/badge/BullMQ-Jobs-FF6B6B?style=flat-square)
+
 ## 🚀 Features
 
 - ✅ **TypeScript** - Full type safety across the application
 - ✅ **Modular Architecture** - Clean separation of concerns with feature modules
-- ✅ **Authentication** - JWT-based authentication with role-based access control
+- ✅ **Authentication** - JWT with refresh token rotation & Redis sessions
 - ✅ **Database** - Prisma ORM with PostgreSQL
-- ✅ **Validation** - Input validation for API endpoints
-- ✅ **Error Handling** - Centralized error handling middleware
-- ✅ **Logging** - Structured logging with Winston
+- ✅ **Caching** - Redis caching layer with response middleware
+- ✅ **Background Jobs** - BullMQ queues with worker process
+- ✅ **Validation** - Zod schema validation
+- ✅ **Error Handling** - Custom error classes with Prisma/Zod support
+- ✅ **Logging** - Structured logging with correlation IDs
+- ✅ **Metrics** - Prometheus metrics at `/metrics`
 - ✅ **Rate Limiting** - Protection against API abuse
 - ✅ **Security** - Helmet.js for security headers
-- ✅ **CORS** - Cross-origin resource sharing configuration
-- ✅ **Testing** - Jest and Supertest for comprehensive testing
-- ✅ **Docker** - Containerized deployment with Docker and Docker Compose
-- ✅ **Environment Config** - Environment-based configuration management
+- ✅ **Docker** - Docker Compose with PostgreSQL, Redis, NGINX
+- ✅ **Documentation** - VitePress docs site
 
 ## 📁 Project Structure
 

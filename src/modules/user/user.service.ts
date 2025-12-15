@@ -8,12 +8,12 @@ export const findAll = async (params: UserQueryParams = {}): Promise<{ users: Us
 
   const where = search
     ? {
-        OR: [
-          { email: { contains: search, mode: 'insensitive' as const } },
-          { firstName: { contains: search, mode: 'insensitive' as const } },
-          { lastName: { contains: search, mode: 'insensitive' as const } },
-        ],
-      }
+      OR: [
+        { email: { contains: search, mode: 'insensitive' as const } },
+        { firstName: { contains: search, mode: 'insensitive' as const } },
+        { lastName: { contains: search, mode: 'insensitive' as const } },
+      ],
+    }
     : {};
 
   const [users, total] = await Promise.all([
@@ -139,7 +139,7 @@ export const update = async (id: string, userData: UpdateUserInput): Promise<Use
       email,
       firstName,
       lastName,
-      role,
+      ...(role && { role: role as 'USER' | 'ADMIN' }),
     },
     select: {
       id: true,

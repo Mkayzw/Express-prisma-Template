@@ -7,7 +7,7 @@ import {
     getQueueStats,
 } from './jobs.controller';
 
-const router = Router();
+const router: Router = Router();
 
 // All job routes require authentication and admin role
 router.use(authenticate);
