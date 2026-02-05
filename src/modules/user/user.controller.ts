@@ -36,7 +36,7 @@ export const getUserById = async (
 ): Promise<void> => {
   try {
     const { id } = req.params;
-    const user = await userService.findById(id);
+    const user = await userService.findById(id as string);
 
     if (!user) {
       res.status(404).json({
@@ -96,7 +96,7 @@ export const updateUser = async (
       delete userData.role;
     }
 
-    const user = await userService.update(id, userData);
+    const user = await userService.update(id as string, userData);
     res.status(200).json({
       success: true,
       data: user,
@@ -123,7 +123,7 @@ export const deleteUser = async (
       return;
     }
 
-    await userService.remove(id);
+    await userService.remove(id as string);
     res.status(200).json({
       success: true,
       message: 'User deleted successfully',
