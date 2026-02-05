@@ -1,28 +1,19 @@
-export interface EmailJobData {
-    to: string;
-    subject: string;
-    body: string;
-    template?: string;
-    context?: Record<string, unknown>;
-}
+import { z } from 'zod';
+import { emailJobSchema, cleanupJobSchema } from './jobs.schema';
 
-export interface CleanupJobData {
-    type: 'expired_sessions' | 'old_logs' | 'orphaned_data';
-    olderThanDays?: number;
-}
+export type EmailJobData = z.infer<typeof emailJobSchema>;
+export type CleanupJobData = z.infer<typeof cleanupJobSchema>;
 
 export interface NotificationJobData {
     userId: string;
-    type: 'email' | 'push' | 'sms';
-    title: string;
-    message: string;
-    data?: Record<string, unknown>;
+    type: string;
+    payload?: any;
 }
 
 export interface JobInfo {
     id: string;
     name: string;
-    data: unknown;
+    data: any;
     status: string;
     progress: number;
     attemptsMade: number;

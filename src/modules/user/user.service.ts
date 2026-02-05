@@ -2,7 +2,7 @@ import bcrypt from 'bcryptjs';
 import { prisma } from '../../db/client';
 import { User, CreateUserInput, UpdateUserInput, UserQueryParams } from './user.types';
 
-export const findAll = async (params: UserQueryParams = {}): Promise<{ users: User[]; total: number; page: number; limit: number }> => {
+export const findAll = async (params: Partial<UserQueryParams> = {}): Promise<{ users: User[]; total: number; page: number; limit: number }> => {
   const { page = 1, limit = 10, sortBy = 'createdAt', sortOrder = 'desc', search } = params;
   const skip = (page - 1) * limit;
 

@@ -1,14 +1,9 @@
-export interface LoginInput {
-  email: string;
-  password: string;
-}
+import { z } from 'zod';
+import { loginSchema, registerSchema, changePasswordSchema } from './auth.schema';
 
-export interface RegisterInput {
-  email: string;
-  password: string;
-  firstName?: string;
-  lastName?: string;
-}
+export type LoginInput = z.infer<typeof loginSchema>;
+export type RegisterInput = z.infer<typeof registerSchema>;
+export type ChangePasswordInput = z.infer<typeof changePasswordSchema>;
 
 export interface TokenPair {
   accessToken: string;
@@ -24,11 +19,6 @@ export interface AuthResponse {
     role: string;
   };
   tokens: TokenPair;
-}
-
-export interface ChangePasswordInput {
-  currentPassword: string;
-  newPassword: string;
 }
 
 export interface RefreshTokenPayload {

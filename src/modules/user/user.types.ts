@@ -1,3 +1,6 @@
+import { z } from 'zod';
+import { createUserSchema, updateUserSchema, userQuerySchema } from './user.schema';
+
 export interface User {
   id: string;
   email: string;
@@ -8,24 +11,6 @@ export interface User {
   updatedAt: Date;
 }
 
-export interface CreateUserInput {
-  email: string;
-  password: string;
-  firstName?: string;
-  lastName?: string;
-}
-
-export interface UpdateUserInput {
-  email?: string;
-  firstName?: string;
-  lastName?: string;
-  role?: 'USER' | 'ADMIN';
-}
-
-export interface UserQueryParams {
-  page?: number;
-  limit?: number;
-  sortBy?: string;
-  sortOrder?: 'asc' | 'desc';
-  search?: string;
-}
+export type CreateUserInput = z.infer<typeof createUserSchema>;
+export type UpdateUserInput = z.infer<typeof updateUserSchema>;
+export type UserQueryParams = z.infer<typeof userQuerySchema>;

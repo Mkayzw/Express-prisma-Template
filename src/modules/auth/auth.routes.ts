@@ -1,6 +1,13 @@
 import { Router } from 'express';
 import { authenticate } from '../../middleware/authGuard';
-import { validateCreateUser } from '../user/user.schema';
+import { validateRequest } from '../../middleware/validateRequest';
+import {
+    loginSchema,
+    registerSchema,
+    changePasswordSchema,
+    refreshTokenSchema,
+    logoutSchema
+} from './auth.schema';
 import {
   login,
   register,
@@ -14,14 +21,14 @@ import {
 const router: Router = Router();
 
 // Public routes
-router.post('/login', login);
-router.post('/register', validateCreateUser, register);
-router.post('/refresh', refreshToken);
-router.post('/logout', logout);
+router.post('/login', validateRequest({ body: loginSchema }), login);
+router.post('/register', validateRequest({ body: registerSchema }), register);
+router.post('/refresh', validateRequest({ body: refreshTokenSchema }), refreshToken);
+router.post('/logout', validateRequest({ body: logoutSchema }), logout);
 
 // Protected routes
 router.use(authenticate);
-router.post('/change-password', changePassword);
+router.post('/change-password', validateRequest({ body: changePasswordSchema }), changePassword);
 router.post('/logout-all', logoutAll);
 router.get('/verify', verifyToken);
 

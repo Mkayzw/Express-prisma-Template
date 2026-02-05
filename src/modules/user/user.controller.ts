@@ -9,16 +9,8 @@ export const getUsers = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    const { page, limit, sortBy, sortOrder, search } = req.query;
+    const params = req.query as unknown as UserQueryParams;
     
-    const params: UserQueryParams = {
-      page: page ? parseInt(page as string) : undefined,
-      limit: limit ? parseInt(limit as string) : undefined,
-      sortBy: sortBy as string,
-      sortOrder: sortOrder as 'asc' | 'desc',
-      search: search as string,
-    };
-
     const result = await userService.findAll(params);
     res.status(200).json({
       success: true,
@@ -35,7 +27,7 @@ export const getUserById = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const user = await userService.findById(id);
 
     if (!user) {
@@ -79,7 +71,7 @@ export const updateUser = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const userData: UpdateUserInput = req.body;
 
     // Users can only update their own profile unless they're admin
@@ -112,7 +104,7 @@ export const deleteUser = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     // Users can only delete their own account unless they're admin
     if (req.user?.id !== id && req.user?.role !== 'ADMIN') {
