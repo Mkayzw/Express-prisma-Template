@@ -45,7 +45,8 @@ export const getJobStatus = async (
     next: NextFunction
 ): Promise<void> => {
     try {
-        const { queue, jobId } = req.params;
+        const queue = req.params.queue as string;
+        const jobId = req.params.jobId as string;
         const job = await jobsService.getJobStatus(queue, jobId);
 
         if (!job) {
@@ -71,7 +72,7 @@ export const getQueueStats = async (
     next: NextFunction
 ): Promise<void> => {
     try {
-        const { queue } = req.params;
+        const queue = req.params.queue as string;
         const stats = await jobsService.getQueueStats(queue);
 
         if (!stats) {

@@ -12,6 +12,8 @@ import { metricsMiddleware, metricsHandler } from './lib/metrics';
 import logger from './utils/logger';
 import { prisma } from './db/client';
 import RedisClient from './lib/redis';
+import swaggerUi from 'swagger-ui-express';
+import { specs } from './config/swagger';
 
 const app: ReturnType<typeof express> = express();
 
@@ -40,6 +42,9 @@ app.use(metricsMiddleware);
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/jobs', jobsRoutes);
+
+// Swagger Documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 // Metrics endpoint (Prometheus)
 app.get('/metrics', metricsHandler);
